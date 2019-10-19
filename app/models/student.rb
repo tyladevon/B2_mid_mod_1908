@@ -1,3 +1,8 @@
 class Student < ApplicationRecord
-  has_many :instructors
+  validates_presence_of :name
+  validates_presence_of :cohort
+  validates_presence_of :age
+  
+  has_many :instructor_students
+  has_many :instructors, through: :instructor_students
 end
