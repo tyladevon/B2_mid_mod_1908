@@ -1,0 +1,9 @@
+<h1>Student Index</h1>
+
+<% @students.each do |student| %>
+  <h4><%= student.name %></h4>
+  <h4><%= student.cohort %></h4>
+    <% student.instructors.each do |instructor| %>
+    <h4><%= link_to instructor.name, "/instructors/#{instructor.id}" %></h4>
+    <% end %>
+<% end %>
